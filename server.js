@@ -46,7 +46,7 @@ app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
 
 
-var server = app.listen(process.env.DATABASE_PORT || 3000, process.env.HOST, () =>{
+var server = app.listen(process.env.DATABASE_PORT || 3306, process.env.HOST, () =>{
     console.log("we are live at %s ", server.address());
 })
     
