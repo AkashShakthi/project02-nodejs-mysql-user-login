@@ -33,7 +33,14 @@ db.connect((err) =>{
     if(err) throw err;
     console.log ("Conntected to db")
 })
-
+//Allow cross origin
+app.use(function(req, res, next){
+    res.header("Access-Control-Allow-Origin", "*");
+    
+    res.header("Access-Control-Allow-Headers", "Örigin, X-Requested-With, Content-Type, Accept" );
+    next();
+    });
+    
 //define routes
 app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
