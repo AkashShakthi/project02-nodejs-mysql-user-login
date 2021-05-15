@@ -3,9 +3,7 @@ const express = require('express');
 const authController = require('../controllers/auth')
 const router = express.Router();
 
-router.get('/', authController.isLoggedIn, (req,res) =>{
-    res.send('Hello world');
-    console.log('******************************************')
+router.get('/', authController.isLoggedIn, (req,res) =>{ 
     res.render('index',{
         user: req.user
     })
