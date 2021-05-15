@@ -39,10 +39,12 @@ app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
 
 
-app.listen(process.env.DATABASE_PORT || 3000, () =>{
-console.log("Server started on "+ process.env.DATABASE_PORT)
+var server = app.listen(process.env.DATABASE_PORT || 3000, process.env.HOST, () =>{
+    console.log("we are live at %s ", server.address());
 })
     
+
+
 
 
 
