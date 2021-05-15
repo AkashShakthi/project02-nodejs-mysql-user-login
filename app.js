@@ -39,8 +39,8 @@ app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
 
 
-app.listen(3000, () =>{
-console.log("Server started on 3000")
+app.listen(process.env.DATABASE_PORT , () =>{
+console.log("Server started on "+ process.env.DATABASE_PORT)
 })
     
 
