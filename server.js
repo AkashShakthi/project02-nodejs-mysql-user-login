@@ -12,7 +12,8 @@ const db = mysql.createConnection({
     host: process.env.DATABASE_HOST,
     user: process.env.DATABASE_USER,
     password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE
+    database: process.env.DATABASE,
+    port: process.env.DATABASE_PORT
 });
 
 const publicDirectory = path.join(__dirname, "./public")
@@ -46,7 +47,7 @@ app.use('/', require('./routes/pages'));
 app.use('/auth', require('./routes/auth'));
 
 
-var server = app.listen(process.env.DATABASE_PORT , process.env.HOST, () =>{
+var server = app.listen(process.env.PORT || 3000 , process.env.HOST, () =>{
     console.log("we are live at %s ", server.address());
 })
     
